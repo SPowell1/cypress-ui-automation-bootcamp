@@ -1,0 +1,374 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 9,
+    "passes": 9,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-11-18T19:59:07.327Z",
+    "end": "2022-11-18T19:59:37.141Z",
+    "duration": 13960,
+    "testsRegistered": 9,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d9d90272-f178-4187-b13d-19e000065ed0",
+      "title": "",
+      "fullFile": "cypress/e2e/test/activity4.cy.js",
+      "file": "cypress/e2e/test/activity4.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "26fe1698-e3a7-4593-8eca-a35f85d18a3d",
+          "title": "Activity 4",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login with a valid user",
+              "fullTitle": "Activity 4 Login with a valid user",
+              "timedOut": null,
+              "duration": 1131,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Enter username & password then click the login button\ncy.get('#user-name').type('standard_user');\ncy.get('#password').type('secret_sauce');\ncy.get('#login-button').click(); // Assert that the user is taken to the Products page\ncy.get('.inventory_item_name').should('be.visible');",
+              "err": {},
+              "uuid": "54f4e59d-1e43-495c-965d-368d9410966d",
+              "parentUUID": "26fe1698-e3a7-4593-8eca-a35f85d18a3d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add a single product to cart",
+              "fullTitle": "Activity 4 Add a single product to cart",
+              "timedOut": null,
+              "duration": 1253,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Login with a valid user\ncy.get('#user-name').type('standard_user');\ncy.get('#password').type('secret_sauce');\ncy.get('#login-button').click(); // Click add to cart button\ncy.get('#add-to-cart-sauce-labs-backpack').click(); // Assert the notification on the cart icon then navigate to cart\ncy.get('.shopping_cart_badge').should('have.text', 1);\ncy.get('.shopping_cart_link').click(); // Assert correct item was added to cart successfully\ncy.get('.cart_quantity').should('have.text', 1);\ncy.get('#remove-sauce-labs-backpack').should('be.visible');\ncy.get('.inventory_item_name').should('have.text', 'Sauce Labs Backpack');",
+              "err": {},
+              "uuid": "70a0bcfa-3b61-43b8-8620-3d6edf63a14b",
+              "parentUUID": "26fe1698-e3a7-4593-8eca-a35f85d18a3d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Remove one item from cart",
+              "fullTitle": "Activity 4 Remove one item from cart",
+              "timedOut": null,
+              "duration": 1244,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Login with a valid user\ncy.get('#user-name').type('standard_user');\ncy.get('#password').type('secret_sauce');\ncy.get('#login-button').click(); // Add an item to the cart so we can remove it\ncy.get('#add-to-cart-sauce-labs-backpack').click(); // Navigate to the cart\ncy.get('.shopping_cart_link').click(); // Assert that there is 1 item in the cart then remove the item\ncy.get('.cart_quantity').should('have.text', 1);\ncy.get('.inventory_item_name').should('have.text', 'Sauce Labs Backpack');\ncy.get('#remove-sauce-labs-backpack').click(); // Assert that the item was removed and the cart is empty\ncy.get('.inventory_item_name').should('not.exist');\ncy.get('.removed_cart_item').should('exist');",
+              "err": {},
+              "uuid": "5ae90bb2-5158-49cf-bbc3-20747827c28e",
+              "parentUUID": "26fe1698-e3a7-4593-8eca-a35f85d18a3d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "54f4e59d-1e43-495c-965d-368d9410966d",
+            "70a0bcfa-3b61-43b8-8620-3d6edf63a14b",
+            "5ae90bb2-5158-49cf-bbc3-20747827c28e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3628,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "98c4ead1-5c0c-4e9f-83d7-74ec63738fc2",
+      "title": "",
+      "fullFile": "cypress/e2e/test/cart.cy.js",
+      "file": "cypress/e2e/test/cart.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "63d5cc31-1571-4e1d-b243-87c8df793663",
+          "title": "Activity 6",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add a single product to cart",
+              "fullTitle": "Activity 6 Add a single product to cart",
+              "timedOut": null,
+              "duration": 1436,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('standard_user', 'secret_sauce');\n_cart.default.addToCart('Sauce Labs Backpack');\n_cart.default.navigateToCart();\ncy.get(_cart.default.cartNotification).should('have.text', 1);\ncy.get(_cart.default.cartQuantity).should('have.text', 1);\ncy.get(_cart.default.removeSauceLabBackPackBtn).should('be.visible');\ncy.get(_cart.default.cartItemsName).should('have.text', 'Sauce Labs Backpack');",
+              "err": {},
+              "uuid": "2fdf5f42-3787-4098-bac1-8ec131db18ae",
+              "parentUUID": "63d5cc31-1571-4e1d-b243-87c8df793663",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Remove one item from cart",
+              "fullTitle": "Activity 6 Remove one item from cart",
+              "timedOut": null,
+              "duration": 1304,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('standard_user', 'secret_sauce');\n_cart.default.addToCart('Sauce Labs Backpack');\n_cart.default.navigateToCart(); // Assert that there is 1 item in the cart then remove the item\n\ncy.get(_cart.default.cartQuantity).should('have.text', 1);\ncy.get(_cart.default.cartItemsName).should('have.text', 'Sauce Labs Backpack');\ncy.get(_cart.default.removeSauceLabBackPackBtn).click(); // Assert that the item was removed and the cart is empty\ncy.get(_cart.default.cartItemsName).should('not.exist');\ncy.get(_cart.default.removedCartItem).should('exist');",
+              "err": {},
+              "uuid": "50dacaf5-18b0-46b8-8d51-dbe9ff7d6e22",
+              "parentUUID": "63d5cc31-1571-4e1d-b243-87c8df793663",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2fdf5f42-3787-4098-bac1-8ec131db18ae",
+            "50dacaf5-18b0-46b8-8d51-dbe9ff7d6e22"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2740,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "acd59909-b124-4471-aa63-5231d9e7e07e",
+      "title": "",
+      "fullFile": "cypress/e2e/test/login.cy.js",
+      "file": "cypress/e2e/test/login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d63145c3-b8c1-4cd7-b178-586a8fb06db7",
+          "title": "Authentication",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login with a valid user",
+              "fullTitle": "Authentication Login with a valid user",
+              "timedOut": null,
+              "duration": 1213,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_auth.default.login('standard_user', 'secret_sauce');\ncy.get('.inventory_item_name').should('be.visible');",
+              "err": {},
+              "uuid": "ac554d26-4025-4d35-948a-94f851b453eb",
+              "parentUUID": "d63145c3-b8c1-4cd7-b178-586a8fb06db7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ac554d26-4025-4d35-948a-94f851b453eb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1213,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "257696c1-f7d2-4b29-b27a-89b73f216e33",
+      "title": "",
+      "fullFile": "cypress/e2e/test/activity3.cy.js",
+      "file": "cypress/e2e/test/activity3.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4c687053-f900-4251-b602-aba8d19ca969",
+          "title": "Activity 3",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login with a valid user",
+              "fullTitle": "Activity 3 Login with a valid user",
+              "timedOut": null,
+              "duration": 3070,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Enter username & password then click the login button\ncy.get('#user-name').type('standard_user');\ncy.get('#password').type('secret_sauce');\ncy.get('#login-button').click();",
+              "err": {},
+              "uuid": "f4c6dbb4-e753-4f45-8d4b-1e1124147656",
+              "parentUUID": "4c687053-f900-4251-b602-aba8d19ca969",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add a single product to cart",
+              "fullTitle": "Activity 3 Add a single product to cart",
+              "timedOut": null,
+              "duration": 1514,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Login with a valid user\ncy.get('#user-name').type('standard_user');\ncy.get('#password').type('secret_sauce');\ncy.get('#login-button').click(); // Add the saucelabs backpack to the cart\ncy.get('#add-to-cart-sauce-labs-backpack').click();",
+              "err": {},
+              "uuid": "c8627d12-082a-44eb-8ec7-8eb69d656f8d",
+              "parentUUID": "4c687053-f900-4251-b602-aba8d19ca969",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Remove one item from cart",
+              "fullTitle": "Activity 3 Remove one item from cart",
+              "timedOut": null,
+              "duration": 1795,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Login with a valid user\ncy.get('#user-name').type('standard_user');\ncy.get('#password').type('secret_sauce');\ncy.get('#login-button').click(); // Add the saucelabs backpack to the cart\ncy.get('#add-to-cart-sauce-labs-backpack').click(); // Navigate to cart and remove the saucelabs backpack from the cart\ncy.get('.shopping_cart_link').click();\ncy.get('#remove-sauce-labs-backpack').click();",
+              "err": {},
+              "uuid": "f550eb35-09cd-45a4-9a61-9fdcd36ce2ab",
+              "parentUUID": "4c687053-f900-4251-b602-aba8d19ca969",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f4c6dbb4-e753-4f45-8d4b-1e1124147656",
+            "c8627d12-082a-44eb-8ec7-8eb69d656f8d",
+            "f550eb35-09cd-45a4-9a61-9fdcd36ce2ab"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6379,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/report",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
