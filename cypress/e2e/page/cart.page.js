@@ -1,5 +1,5 @@
 class Cart{
-    
+    //#region Selectors
     get cartIcon() { return ('.shopping_cart_link') }
     get cartNotification() { return ('.shopping_cart_badge') }
 
@@ -17,7 +17,9 @@ class Cart{
     get removedCartItem() { return ('.removed_cart_item') }
 
     get checkOutBtn() { return ('#checkout') }
+    //#endregion
 
+    //#region Methods
     addToCart(itemName){
         let addToCartBtn = `#add-to-cart-${this.applySelectorFormat(itemName)}`
 
@@ -39,5 +41,6 @@ class Cart{
     applySelectorFormat(itemName){
         return itemName.toLowerCase().replaceAll(' ', '-')
     }
+    //#endregion
 }
 export default new Cart()
