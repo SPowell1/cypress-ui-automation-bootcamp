@@ -19,12 +19,15 @@ $ npm install
 
 # Execute tests
 Execute the Cypress GUI
+
 ```npx cypress open```
 
 Execute the Cypress via commandline
+
 ```npx cypress run```
 
 Executes all tests in the Chrome browser and generates a Mochawesome report.
+
 ```npm test``` 
 
 # Execute tests in a different browser
