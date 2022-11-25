@@ -11,6 +11,8 @@ describe('Activity 4', () => {
 
         // Assert that the user is taken to the Products page
         cy.get('.inventory_item_name').should('be.visible')
+        cy.get('.title').contains('Products')
+        cy.url().should('contain', 'inventory')
     })
 
     it('Add a single product to cart', () => {
