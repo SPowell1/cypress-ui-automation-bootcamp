@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
-import Auth from '../page/auth.page'
-import Product from '../page/product.page'
-import ProductData, { product } from '../data/products.data'
+import Auth from '../../../page/SauceDemo/auth.page'
+import Product from '../../../page/SauceDemo/product.page'
+import ProductData from '../../../data/products.data'
 
 describe('Filter', () => {
     beforeEach(() => {
@@ -10,6 +10,7 @@ describe('Filter', () => {
 
     it('should sort product list from A-Z', () => {
         Auth.login('standard_user','secret_sauce')
+        Product.selectFilter(ProductData.filter['A to Z'])
 
         // Sort data list based on name, from A to Z
         ProductData.products.sort()

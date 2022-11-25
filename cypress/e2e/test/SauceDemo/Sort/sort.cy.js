@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import Auth from '../page/auth.page'
+import Auth from '../../../page/SauceDemo/auth.page'
 
 describe('Filter', () => {
     beforeEach(() => {
@@ -8,6 +8,7 @@ describe('Filter', () => {
 
     it('should sort product list from A-Z', () => {
         Auth.login('standard_user','secret_sauce')
+        cy.get('.product_sort_container').select('az')
 
         var productList = ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)']
         productList.sort()

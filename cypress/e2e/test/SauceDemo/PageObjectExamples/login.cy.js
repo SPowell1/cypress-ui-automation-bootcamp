@@ -1,5 +1,5 @@
 /// <reference types="cypress"/>
-import Auth from '../page/auth.page'
+import Auth from '../../../page/SauceDemo/auth.page'
 
 describe('Authentication', () => {
     beforeEach(() => {
