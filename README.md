@@ -36,8 +36,13 @@ Executes all tests in the Chrome browser and generates a Mochawesome report.
 ***N.B. The browser must be installed on the device.***
 
 # Execute a specific test file
-```npx cypress run --spec cypress/e2e/test/SauceDemo/PageObjectExamples/login.cy.js```
+
+Without Report
+
+```npx cypress run --spec cypress/e2e/test/InClassActivities/activity4.cy.js```
 
 OR
 
-```npm test -- cypress/e2e/test/SauceDemo/PageObjectExamples/login.cy.js```
+With Report
+
+```npm run test:spec cypress/e2e/test/InClassActivities/activity4.cy.js```
