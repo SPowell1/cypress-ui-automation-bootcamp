@@ -22,6 +22,6 @@ module.exports = defineConfig({
     chromeWebSecurity: false
   },
   env: {
-    apiKey: process.env.API_KEY,
+    environment: "QA",
   }
 });
