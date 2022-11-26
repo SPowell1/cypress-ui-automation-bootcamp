@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
-import Auth from '../../../page/SauceDemo/auth.page'
-import Product from '../../../page/SauceDemo/product.page'
-import ProductData from '../../../data/products.data'
+import Auth from '../../page/auth.page'
+import Product from '../../page/product.page'
+import ProductData from '../../data/products.data'
 
 describe('Filter', () => {
     beforeEach(() => {

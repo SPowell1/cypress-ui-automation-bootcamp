@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
-import Auth from '../../../page/SauceDemo/auth.page'
-import Cart from '../../../page/SauceDemo/cart.page'
+import Auth from '../../page/auth.page'
+import Cart from '../../page/cart.page'
 
 describe('Activity 6', () => {
     beforeEach(() => {

@@ -26,4 +26,4 @@
 
 Cypress.Commands.add('TestCommand', () => { 
     cy.log('Is my command working?')
- })
+})
