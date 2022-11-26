@@ -13,7 +13,7 @@ describe('Filter', () => {
         var productList = ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)']
         productList.sort()
 
-        cy.get('.inventory_item_name').each(($elem, index, $list) => {
+        cy.get('.inventory_item_name').each(($elem, index) => {
             expect($elem.text()).equal(productList[index])
         })
     })
@@ -25,7 +25,7 @@ describe('Filter', () => {
         var productList = ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)']
         productList.sort().reverse()
 
-        cy.get('.inventory_item_name').each(($elem, index, $list) => {
+        cy.get('.inventory_item_name').each(($elem, index) => {
             expect($elem.text()).equal(productList[index])
         })
     })

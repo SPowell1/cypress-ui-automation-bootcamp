@@ -15,7 +15,7 @@ describe('Filter', () => {
         // Sort data list based on name, from A to Z
         ProductData.products.sort()
 
-        cy.get(Product.itemsName).each(($elem, index, $list) => {
+        cy.get(Product.itemsName).each(($elem, index) => {
             expect($elem.text()).equal(ProductData.products[index].name)
         })
     })
@@ -27,7 +27,7 @@ describe('Filter', () => {
         // Sort data list based on name, from Z to A
         ProductData.products.sort().reverse()
 
-        cy.get(Product.itemsName).each(($elem, index, $list) => {
+        cy.get(Product.itemsName).each(($elem, index) => {
             expect($elem.text()).equal(ProductData.products[index].name)
         })
     })
@@ -37,9 +37,9 @@ describe('Filter', () => {
         Product.selectFilter(ProductData.filter['Low to High'])
 
         // Sort data list based on price, from low to high
-        ProductData.products.sort((a, b) => a.price - b.price);
+        ProductData.products.sort((a, b) => a.price - b.price)
 
-        cy.get(Product.itemsPrice).each(($elem, index, $list) => {
+        cy.get(Product.itemsPrice).each(($elem, index) => {
             expect($elem.text()).equal(`$${ProductData.products[index].price}`)
         })
     })
@@ -49,14 +49,14 @@ describe('Filter', () => {
         Product.selectFilter(ProductData.filter['High to Low'])
 
         // Sort data list based on price, from high to low
-        ProductData.products.sort((a, b) => b.price - a.price);
+        ProductData.products.sort((a, b) => b.price - a.price)
 
         // Print the prices from the sorted list
         // ProductData.products.forEach(($elem, index)=>{
         //     cy.log($elem.price)
         // })
 
-        cy.get(Product.itemsPrice).each(($elem, index, $list) => {
+        cy.get(Product.itemsPrice).each(($elem, index) => {
             expect($elem.text()).equal(`$${ProductData.products[index].price}`)
         })
     })
