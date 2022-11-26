@@ -13,10 +13,15 @@ module.exports = defineConfig({
     // Activity 7
     reporter: 'mochawesome',
     reporterOptions: {
-    reportDir: 'cypress/report',
+    reportDir: 'cypress/reports',
     overwrite: false,
     html: false,
     json: true
-    }
+    },
+    
+    chromeWebSecurity: false
   },
+  env: {
+    apiKey: process.env.API_KEY,
+  }
 });
