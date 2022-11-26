@@ -27,3 +27,7 @@
 Cypress.Commands.add('TestCommand', () => { 
     cy.log('Is my command working?')
 })
+
+Cypress.Commands.add('PrintName',() => {
+    cy.log('My Name is Orane Findley')
+})

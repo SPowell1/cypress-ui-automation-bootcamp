@@ -1,5 +1,6 @@
 /// <reference types="cypress"/>
 import Auth from '../../page/auth.page'
+import routesData from '../../data/routes.data'
 
 describe('Authentication', () => {
     beforeEach(() => {
@@ -8,7 +9,9 @@ describe('Authentication', () => {
 
     it('Login with a valid user', () => {
         Auth.login('standard_user','secret_sauce')
-        cy.get('.inventory_item_name').should('be.visible')
+        cy.get(Auth.itemNames).should('be.visible')
         cy.TestCommand()
+
+        cy.url().should('contain', routesData.product)
     })
 })

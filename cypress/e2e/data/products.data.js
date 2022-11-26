@@ -1,5 +1,5 @@
 module.exports = {
-    filter: {
+    sort: {
         'A to Z':'az',
         'Z to A':'za',
         'Low to High':'lohi',

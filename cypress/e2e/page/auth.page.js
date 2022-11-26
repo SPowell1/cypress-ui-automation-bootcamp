@@ -5,6 +5,8 @@ class Authentication{
     get passwordField() { return ('#password') }
     get loginBtn() { return ('#login-button') }
 
+    get itemNames() { return ('.inventory_item_name') }
+
     get mainMenuBtn() { return ('#react-burger-menu-btn') }
     get logOutBtn() { return ('#logout_sidebar_link') }
     //#endregion

@@ -5,7 +5,7 @@ import Cart from '../../page/cart.page'
 describe('Activity 6', () => {
     beforeEach(() => {
         cy.visit('/')
-      })
+    })
 
     it('Add a single product to cart', () => {
         Auth.login('standard_user','secret_sauce')

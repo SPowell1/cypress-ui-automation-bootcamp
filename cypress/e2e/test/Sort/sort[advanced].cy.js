@@ -3,14 +3,14 @@ import Auth from '../../page/auth.page'
 import Product from '../../page/product.page'
 import ProductData from '../../data/products.data'
 
-describe('Filter', () => {
+describe('Sort', () => {
     beforeEach(() => {
         cy.visit('/')
       })
 
     it('should sort product list from A-Z', () => {
         Auth.login('standard_user','secret_sauce')
-        Product.selectFilter(ProductData.filter['A to Z'])
+        Product.selectSort(ProductData.sort['A to Z'])
 
         // Sort data list based on name, from A to Z
         ProductData.products.sort()
@@ -22,7 +22,7 @@ describe('Filter', () => {
 
     it('should sort product list from Z-A', () => {
         Auth.login('standard_user','secret_sauce')
-        Product.selectFilter(ProductData.filter['Z to A'])
+        Product.selectSort(ProductData.sort['Z to A'])
 
         // Sort data list based on name, from Z to A
         ProductData.products.sort().reverse()
@@ -34,7 +34,7 @@ describe('Filter', () => {
 
     it('should sort product list from low to high', () => {
         Auth.login('standard_user','secret_sauce')
-        Product.selectFilter(ProductData.filter['Low to High'])
+        Product.selectSort(ProductData.sort['Low to High'])
 
         // Sort data list based on price, from low to high
         ProductData.products.sort((a, b) => a.price - b.price)
@@ -46,7 +46,7 @@ describe('Filter', () => {
 
     it('should sort product list from high to low', () => {
         Auth.login('standard_user','secret_sauce')
-        Product.selectFilter(ProductData.filter['High to Low'])
+        Product.selectSort(ProductData.sort['High to Low'])
 
         // Sort data list based on price, from high to low
         ProductData.products.sort((a, b) => b.price - a.price)
