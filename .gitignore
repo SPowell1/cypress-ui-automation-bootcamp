@@ -1,7 +1,8 @@
 node_modules
-report
+reports
 mochawesome-report
 .DS_Store
+.env
 
 videos
 screenshots
