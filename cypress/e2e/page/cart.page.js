@@ -10,6 +10,8 @@ class Cart{
     get addToCartBtns() { return ('//button[text()="Add to cart"]') }
     // get addToCartBtns() { return ('.btn_inventory') }
 
+    get itemNameBkpk(){return (`a[id='item_4_title_link'] div`)}
+
     get removeItemBtns() { return ('//button[text()="Remove"]') }
     // get removeItemBtn() { return ('.cart_button') }
     
@@ -17,12 +19,14 @@ class Cart{
     get removedCartItem() { return ('.removed_cart_item') }
 
     get checkOutBtn() { return ('#checkout') }
+
+    get cartList() {return('.cart_list')}
+    
     //#endregion
 
     //#region Methods
     addToCart(itemName){
-        let addToCartBtn = `#add-to-cart-${this.applySelectorFormat(itemName)}`
-
+        let addToCartBtn = "#add-to-cart-"+this.applySelectorFormat(itemName)
         cy.get(addToCartBtn).should('be.visible')
         cy.get(addToCartBtn).click()
     }
@@ -36,6 +40,10 @@ class Cart{
 
     navigateToCart(){
         cy.get(this.cartIcon).click()
+    }
+
+    goToCheckout(){
+        cy.get(this.checkOutBtn).click()
     }
 
     applySelectorFormat(itemName){

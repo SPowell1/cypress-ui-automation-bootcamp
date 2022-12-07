@@ -5,7 +5,10 @@ class Authentication{
     get passwordField() { return ('#password') }
     get loginBtn() { return ('#login-button') }
 
+    get errMsg(){ return(`h3[data-test='error']`)}
+    
     get itemNames() { return ('.inventory_item_name') }
+    get ProdPageTitle() {return ('.title')}
 
     get mainMenuBtn() { return ('#react-burger-menu-btn') }
     get logOutBtn() { return ('#logout_sidebar_link') }
